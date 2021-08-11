@@ -18,7 +18,17 @@ Sample text after 5000 iterations on Pride and Prejudice  (LSTM, depth=1, hidden
 
 
 ## Variational Autoencoder
-Vanilla VAE on MNIST data based on Kingma and Welling's [paper]{https://arxiv.org/abs/1312.6114}.
+Vanilla VAE trained on MNIST data based on Kingma and Welling's [paper]{https://arxiv.org/abs/1312.6114}.
+Sample image generated: original (left) vs reconstructed (right) in test set:
 <p align="center">
-    <img src="vanilla VAE/reconstructed_[2, 4, 1, 6, 4, 7, 0, 9, 4, 8].pdf" width="400"\>
+    <img src="vanilla VAE/original_[2, 4, 1, 6, 4, 7, 0, 9, 4, 8].png" width="300"\>
+    <img src="vanilla VAE/reconstructed_[2, 4, 1, 6, 4, 7, 0, 9, 4, 8].png" width="300"\>
 </p>
+
+## GAN with maxout
+GAN trained on MNIST data based on [paper]{https://arxiv.org/abs/1406.2661} by Goodfellow et al. As in the original paper, I have used maxout layers introduced in this [paper]{https://arxiv.org/abs/1302.4389}.
+Sample image generated:
+<p align="center">
+    <img src="GAN with maxout/gen_MO_img.png" width="300"\>
+</p>
+Option of using fully connected layers is also provided.
