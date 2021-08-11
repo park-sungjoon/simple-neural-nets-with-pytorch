@@ -14,8 +14,8 @@ Sample text after 5000 iterations on Pride and Prejudice  (LSTM, depth=1, hidden
 >      was
 >      found herself he had one than she had been the
 >      world. He is uncommon.
-
-
+Sample text when using depth=2:
+>      Miss Bingley and Mr. Collins, let it should you supply such a sensible bagant were distinguished must be so been everything might wish to attisposs you consider what you look ring that the impripeing with them how much a present are, might not mention such as soon from little arrival, I find Lady Catherine, “I could Miss valied the exposing him without loss of your mother’s material good.”
 
 ## Variational Autoencoder
 Vanilla VAE trained on MNIST data based on Kingma and Welling's [paper]{https://arxiv.org/abs/1312.6114}.
