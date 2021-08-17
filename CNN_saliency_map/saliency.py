@@ -92,8 +92,8 @@ def plot_saliency(num_plots, img_grad, img_grad_sm, sample_img, fig_name='', cma
     """
     fig, ax = plt.subplots(num_plots, 3, figsize=(6, 2 * num_plots))
     for plt_idx in range(num_plots):
-        ax[plt_idx, 0].imshow(img_grad[plt_idx, 0, :, :], norm=colors.Normalize(), cmap=cmap)
-        ax[plt_idx, 1].imshow(img_grad_sm[plt_idx, 0, :, :], norm=colors.Normalize(), cmap=cmap)
+        ax[plt_idx, 0].imshow(img_grad[plt_idx, 0, :, :], norm=colors.DivergingNorm(vcenter=0.), cmap=cmap)
+        ax[plt_idx, 1].imshow(img_grad_sm[plt_idx, 0, :, :], norm=colors.DivergingNorm(vcenter=0.), cmap=cmap)
         ax[plt_idx, 2].imshow(sample_img[plt_idx, 0, :, :].data.numpy(), norm=colors.Normalize(), cmap=cmap)
         for i in range(3):
             ax[plt_idx, i].axes.xaxis.set_ticks([])
