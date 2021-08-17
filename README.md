@@ -32,3 +32,25 @@ Sample image generated:
     <img src="GAN with maxout/gen_MO_img.png" width="300"\>
 </p>
 Option of using fully connected layers is also provided.
+
+## CNN and saliency map
+We train a shallow CNN+Linear model on MNIST data and examine the saliency map. We show the vanilla gradient and the smooth gradient saliency map. The former plots 
+<img src="https://render.githubusercontent.com/render/math?math=\frac{\partial L(X)}{\partial X_{ij}}">
+where <em>L</em> is the loss and <em>X<sub>ij</sub></em> is the <em>ij</em>th pixel of image X.
+The latter averages the vanilla gradient saliency map by adding Gaussian noise to each pixel, see this [paper]{https://arxiv.org/abs/1706.03825}.
+We also carry out a [sanity check]{https://arxiv.org/abs/1810.03292} by randomizing parameters of the model, and check that the gradient based saliency maps are sensitive to the randomization.
+
+<p align="center">
+    <img src="CNN_saliency_map/saliency.png" width="150"\>
+    <img src="CNN_saliency_map/saliency_rand.png" width="150"\>
+    <img src="CNN_saliency_map/saliency01.png" width="150"\>
+    <img src="CNN_saliency_map/saliency_rand01.png" width="150"\>
+</p>
+From the left: Saliency map of model trained on MNIST.
+Saliency map of randomized model (after training on MNIST). 
+Saliency map of model trained on only the labels 0 and 1 in MNIST. 
+Saliency map of randomized model (after trained on only the labels 0 and 1 in MNIST).
+Note that blue (red) in saliency map is negative (positive) in value.<br> <br>
+
+Let us note that when we train with labels 0 and 1 only, the saliency maps are much easier to interpret, as opposed to saliency maps for model trained on all 10 labels (since in such a case, a more complicated decision process is required).
+For example, a typical saliency map for label 1 shows a blue vertical line, which indicates that the loss decreases if the pixel value increase, which makes sense because that is what a typical '1' looks like.
